@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  r2e-sandbox:
+    build: .
+    container_name: r2e_security_sandbox
+    privileged: true
+    cap_add:
+      - SYS_ADMIN
+      - SYS_PTRACE
+    devices:
+      - /dev/fuse:/dev/fuse
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      - r2e_data:/mnt/r2e_protected
+      - r2e_logs:/var/log/r2e
+    stdin_open: true
+    tty: true
+
+volumes:
+  r2e_data:
+  r2e_logs:

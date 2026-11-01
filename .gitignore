@@ -1,0 +1,8 @@
+build/
+bin/
+__pycache__/
+*.pyc
+*.o
+*.log
+r2e_forensics.json
+r2e_forensic_log.json
